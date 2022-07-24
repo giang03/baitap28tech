@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-ll a[10001][10001];
+ll a[100001][3];
 void tohop(){
 	for(int i = 1; i <= 10000; i++){
 		for(int j = 1; j <= i; j++){
@@ -18,12 +18,16 @@ void tohop(){
 int main() {
 	tohop();
 	int n;	cin >> n;
+	int k = 3, h = 0;
 	for(int i = 1; i <= n ; i++){
 		if(i == 1) cout << 0 << endl;
 		else if(i == 2) cout << a[4][2] << endl;
+		else if(i == 3) cout << a[8][2] << endl;
 		else {
 			ll m = 1ll * i * i;
-			cout << a[m][2] - a[m-1][1] << endl;
+			cout << a[m][2] - 8*k << endl;
+			k += 3 + h;
+			h++;
 		}
 	}
     return 0;
