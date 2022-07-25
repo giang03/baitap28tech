@@ -12,31 +12,25 @@ bool snt(int n){
 }
 
 void maxmang(int a[],int  n){
-	int max = 0;
+	int max = 0,idx = n;
 	for(int i = 0; i < n; i++){
-		if(max < a[i])
+		if(max < a[i]){
 			max = a[i];
-	}
-	for(int i = 0; i < n; i++){
-		if(a[i] == max){
-			cout << a[i] << " " << i << endl;
-			return;
+			idx = i;
 		}
 	}
+	cout << a[idx] << " " << idx << endl;
 }
 
 void minmang(int a[],int n){
-	int min = a[0];
-	for(int i = 1; i < n; i++){
-		if(min > a[i])
-			min = a[i];
-	}
+	int min = 1000000000,idx = 0;
 	for(int i = n-1; i >= 0; i--){
-		if(a[i] == min){
-			cout << a[i] << " " << i << endl;
-			return;
+		if(min > a[i]){
+			min = a[i];
+			idx = i;
 		}
 	}
+	cout << a[idx] << " " << idx << endl;
 }
 
 ll tichhaiso(int a[], int n){
