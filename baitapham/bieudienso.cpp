@@ -3,18 +3,10 @@
 using namespace std;
 using ll = long long;
 
-bool check1(ll n){
-	if(n%111111111==0 || n%111111111==0 || n%11111111==0||n%1111111==0||n%111111==0||n%11111==0||n%1111==0||n%111==0||n%11==0)
-		return 1;
-	return 0;
-}
-
 bool check(ll n){
-	int m = 111111111;
-	while(n > 10){
-		if(check1(n)) return 1;
-		n%=m;
-		m/=10;
+	for(int i = 0; i <= n/111; i++){
+		int x = (n-111*i)/11;
+		if(11*x+111*i==n) return 1;
 	}
 	return 0;
 }

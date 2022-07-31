@@ -11,7 +11,6 @@ void tohop(int n, int m){
             else if(j == i) a[i][j] = 1;
             else {
                 a[i][j] = a[i-1][j-1] + a[i-1][j];
-                a[i][j] %= (int)(1e9 + 7);
             }
         }
     }
