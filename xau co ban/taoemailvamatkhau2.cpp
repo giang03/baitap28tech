@@ -2,11 +2,20 @@
 
 using namespace std;
 
+map <string,int> ma;
+
 void chuanhoaemail(vector <string> v){
-    cout << v[v.size() - 2];
+    string s = v[v.size() - 2];
     for(int i = 0; i < v.size()- 2; i++){
-        cout << v[i][0];
+        s += v[i][0];
     }
+    if(ma[s] == 0){
+        cout << s;
+    }
+    else {
+        cout << s << ma[s] + 1;
+    }
+    ma[s]++;
     cout << "@xyz.edu.vn" << endl;
 }
 
