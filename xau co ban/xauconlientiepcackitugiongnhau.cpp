@@ -14,7 +14,7 @@ int main(){
     string tmp = "";
     tmp += s[0];
     for(int i = 1 ; i< s.size(); i++){
-        if(s[i] != s[i-1]){
+        if(s[i] == s[i-1]){
             tmp += s[i];
         }
         else{
