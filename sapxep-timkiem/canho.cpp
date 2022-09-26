@@ -2,20 +2,26 @@
 
 using namespace std;
 using ll = long long;
-const int MOD = 1e9 + 7;
 
-int main() {
+
+int main(){
 	int n,m,k; cin >> n >> m >> k;
 	int a[n], b[m];
-	multiset <int> se;
-	for(int &x : a) {
-		cin >> x; 
-		se.insert(x);
-	}
+	for(int &x : a) cin >> x;
 	for(int &x : b) cin >> x;
-	for(int i = 0; i < m; i++){
-		
+	sort(a,a+n);
+	sort(b,b+m);
+	int i = 0, j = 0, dem = 0;
+	while(i < n && j < m){
+		if(abs(a[i] - b[j]) <= k){
+			dem++;
+			i++; j++;
+		}
+		else if(a[i] > b[j]){
+			j++;
+		}
+		else i++;
 	}
+	cout << dem << endl;
     return 0;
 }
-
